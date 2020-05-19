@@ -1,3 +1,4 @@
 # COVID-19-Research
 
-Research assistant for Dr. Ben Fitzpatrick, LMU Mathematics Department, Los Angeles, CA
+Conducting research on the spread of COVID-19 with Dr. Ben Fitzpatrick.
+Loyola Marymount University Mathematics Department, Los Angeles, CA
