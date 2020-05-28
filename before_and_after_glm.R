@@ -35,7 +35,7 @@ subset <- subset %>%
 subset
 
 # LOG PLOT
-ggplot(NULL, aes(x = x)) +
+ggplot(NULL, aes(x = seq(length(subset$usa_deaths)))) +
   geom_point(aes(y = subset$usa_deaths), 
              size = 5) +
   labs(x = 'Days', 
@@ -45,7 +45,7 @@ ggplot(NULL, aes(x = x)) +
         text = element_text(size = 25)) + 
   scale_x_continuous(breaks = seq(0, max(subset$days)+5, by = 5)) +
   scale_y_continuous(breaks = seq(0, max(subset$usa_deaths)+1, by = 1)) 
-ggsave('/Users/Grant/Desktop/plot1.jpeg')
+#ggsave('/Users/Grant/Desktop/plot1.jpeg')
 
 # BREAK DATA INTO SUBSETS, ADD GROUPING VARIABLE, CONCAT, AND VISUALIZE SUBSETS
 subset1 <- subset %>% 
@@ -70,8 +70,8 @@ ggplot(NULL, aes(x = glm_df$days)) +
        title = 'USA COVID-19 Deaths (Linear Subsets)') + 
   theme(plot.title = element_text(hjust = 0.5), 
         text = element_text(size = 25)) + 
-  scale_x_continuous(breaks = seq(min(glm_df$days), max(glm_df$days), by = 3)) 
-ggsave('/Users/Grant/Desktop/plot2.jpeg')
+  scale_x_continuous(breaks = seq(min(glm_df$days), max(glm_df$days), by = 5)) 
+#ggsave('/Users/Grant/Desktop/plot2.jpeg')
 
 # CREATE GLM
 days <- glm_df$days
@@ -129,7 +129,7 @@ ggplot(NULL) +
         legend.text = element_text(size=20),
         legend.title = element_blank()) + 
   scale_x_continuous(breaks = seq(min(new_df$days), max(new_df$days), by = 5))
-ggsave('/Users/Grant/Desktop/plot3.jpeg')
+#ggsave('/Users/Grant/Desktop/plot3.jpeg')
 
 # CREATE GLM WITH NEW DATA
 days <- new_df$days
